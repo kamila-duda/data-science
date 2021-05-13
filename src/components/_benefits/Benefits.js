@@ -11,7 +11,7 @@ import {
 
 const Benefits = () => {
   return (
-    <Container>
+    <Container id="benefits">
       <SectionTitle black>
         Zalety kierunku Data Science &amp; Artifical Inteligence
       </SectionTitle>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Container,
   Wave,
@@ -7,39 +7,40 @@ import {
   Button,
   ButtonsWrapper,
   LinksWrapper,
-  Link,
+  StyledLink,
 } from "./Home.styled";
 import Wave1 from "../../../src/assets/svg/wave1.svg";
 import Wave2 from "../../../src/assets/svg/wave2.svg";
+import { Link } from "react-scroll";
 
 const Home = () => {
-  const [offsetY, setOffsetY] = useState(0);
-  const handleScroll = () => setOffsetY(window.pageYOffset);
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <Container>
-      <Intro offsetY={offsetY}>
+    <Container id="home">
+      <Intro>
         <Title>Data Science &amp; Artificial Inteligence</Title>
         <ButtonsWrapper>
-          <Button color>Informacje</Button>
-          <Button>Przedmioty</Button>
+          <Button color={true}>
+            <Link to={"information"} offset={-100} spy={true} smooth={true}>
+              Informacje
+            </Link>
+          </Button>
+          <Button>
+            <Link to={"subjects"} offset={-100} spy={true} smooth={true}>
+              Przedmioty
+            </Link>
+          </Button>
         </ButtonsWrapper>
       </Intro>
-      <LinksWrapper offsetY={offsetY}>
-        <Link href="https://www.pcz.pl/" target="_blank">
+      <LinksWrapper>
+        <StyledLink href="https://www.pcz.pl/" target="_blank">
           Politechnika Częstochowska
-        </Link>
-        <Link small href="https://wimii.pcz.pl/" target="_blank">
+        </StyledLink>
+        <StyledLink small={true} href="https://wimii.pcz.pl/" target="_blank">
           Wydział Inżynierii Mechanicznej i Informatyki
-        </Link>
+        </StyledLink>
       </LinksWrapper>
-      <Wave src={Wave1} offsetY={offsetY} />
-      <Wave src={Wave2} offsetY={offsetY} />
+      <Wave src={Wave1} />
+      <Wave src={Wave2} />
     </Container>
   );
 };

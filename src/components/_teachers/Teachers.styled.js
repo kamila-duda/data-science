@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.section`
   position: relative;
@@ -7,7 +7,7 @@ export const Container = styled.section`
   padding: 160px 100px 20px;
   background: linear-gradient(179.22deg, #1f1735 10.27%, #1a64ac 127.55%);
   @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
-    padding: 60px 40px 20px;
+    padding: 160px 40px 20px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.s}) {
     padding: 60px 40px 40px;
@@ -36,14 +36,11 @@ export const PicturesGrid = styled.div`
 export const PictureWrapper = styled.div`
   position: relative;
   color: ${({ theme }) => theme.color.darknestWhite};
-  padding: 130px 30px 30px;
+  padding: 30px 30px 30px;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  @media (max-width: ${({ theme }) => theme.breakpoint.s}) {
-    padding: 90px 30px 30px;
-  }
+  align-items: flex-start;
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
     padding: 30px;
   }

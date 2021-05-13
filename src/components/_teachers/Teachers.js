@@ -11,7 +11,7 @@ import { SectionTitle, SmallerParagraph } from "../CommonStyle";
 
 const Teachers = () => {
   return (
-    <Container>
+    <Container id="teachers">
       <SectionTitle>Prowadzący</SectionTitle>
       <PicturesGrid>
         <PictureWrapper data-aos="fade">

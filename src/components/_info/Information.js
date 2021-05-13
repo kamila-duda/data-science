@@ -1,10 +1,16 @@
 import React from "react";
 import { SectionTitle, Paragraph } from "../CommonStyle";
-import { Container, StyledList, StyledListItem } from "./Information.styled";
+import Wave1 from "../../../src/assets/svg/wave1.svg";
+import {
+  Container,
+  StyledList,
+  StyledListItem,
+  Wave,
+} from "./Information.styled";
 
 const Information = () => {
   return (
-    <Container>
+    <Container id="information">
       <SectionTitle>Informacje o kierunku</SectionTitle>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis risus
@@ -53,6 +59,7 @@ const Information = () => {
           massa vulputate risus imperdiet a hendrerit. Q
         </StyledListItem>
       </StyledList>
+      <Wave src={Wave1} />
     </Container>
   );
 };

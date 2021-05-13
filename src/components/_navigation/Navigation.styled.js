@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-scroll";
 
 export const StyledNav = styled.nav`
   background: radial-gradient(
@@ -32,6 +33,11 @@ export const Language = styled.h2`
   margin: 10px;
   padding: 10px;
   font-size: 18px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-bottom: 1px solid ${({ theme }) => theme.color.darknestWhite};
+  }
 `;
 
 export const StyledNavList = styled.ul`
@@ -40,7 +46,8 @@ export const StyledNavList = styled.ul`
   align-items: center;
   margin: 0;
   padding: 10px;
-  border-radius: 0 0 0 50px;
+  color: ${({ theme }) => theme.color.darknestWhite};
+  position: relative;
   @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
     padding: 0;
   }
@@ -48,19 +55,16 @@ export const StyledNavList = styled.ul`
     display: none;
   }
 `;
-export const StyledNavLink = styled.a`
-  cursor: pointer;
-  text-decoration: none;
-  text-transform: capitalize;
-  color: ${({ theme }) => theme.color.darknestWhite};
-  position: relative;
-`;
-export const StyledNavItem = styled.li`
+
+export const StyledNavItem = styled(Link)`
   position: relative;
   padding: 15px 30px;
   font-size: 18px;
   letter-spacing: 2px;
   text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: capitalize;
   color: ${({ theme }) => theme.color.darknestWhite};
   @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
     font-size: 12px;
@@ -71,11 +75,12 @@ export const StyledNavItem = styled.li`
   }
   &:hover {
     border-bottom: 1px solid ${({ theme }) => theme.color.secondColor};
-    ${StyledNavLink} {
-      color: ${({ theme }) => theme.color.secondColor};
-    }
+  }
+  &.active {
+    border-bottom: 1px solid ${({ theme }) => theme.color.secondColor};
   }
 `;
+
 export const StyledIcon = styled.div`
   position: absolute;
   top: 20px;

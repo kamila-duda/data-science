@@ -13,10 +13,7 @@ export const Container = styled.div`
   );
 `;
 
-export const Wave = styled.img.attrs((props) => ({
-  transform: props.offsetY,
-}))`
-  transform: translateY(${({ offsetY }) => `-${offsetY * 0.3}px`});
+export const Wave = styled.img`
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -26,10 +23,7 @@ export const Wave = styled.img.attrs((props) => ({
   }
 `;
 
-export const LinksWrapper = styled.div.attrs((props) => ({
-  transform: props.offsetY,
-}))`
-  transform: translateY(${({ offsetY }) => `-${offsetY * 0.8}px`});
+export const LinksWrapper = styled.div`
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -38,7 +32,7 @@ export const LinksWrapper = styled.div.attrs((props) => ({
   z-index: 1;
 `;
 
-export const Link = styled.a`
+export const StyledLink = styled.a`
   display: block;
   padding: 10px;
   font-size: 24px;
@@ -58,10 +52,7 @@ export const Link = styled.a`
     `}
 `;
 
-export const Intro = styled.div.attrs((props) => ({
-  transform: props.offsetY,
-}))`
-  transform: translateY(${({ offsetY }) => `-${offsetY * 0.3}px`});
+export const Intro = styled.div`
   z-index: 1;
   width: 50%;
   margin: 0 auto 50px;
