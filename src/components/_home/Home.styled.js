@@ -54,7 +54,7 @@ export const StyledLink = styled.a`
 
 export const Intro = styled.div`
   z-index: 1;
-  width: 50%;
+  width: 60%;
   margin: 0 auto 50px;
   @media (max-width: ${({ theme }) => theme.breakpoint.s}) {
     width: 100%;

@@ -27,8 +27,14 @@ export const Paragraph = styled.p`
   letter-spacing: 0.02em;
   font-size: 24px;
   line-height: 1.5;
-  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
+    font-size: 18px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.s}) {
     font-size: 16px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+    font-size: 14px;
   }
 `;
 
@@ -38,7 +44,13 @@ export const SmallerParagraph = styled.p`
   font-size: 18px;
   line-height: 30px;
   margin: 0;
-  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
+    font-size: 16px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.s}) {
     font-size: 14px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+    font-size: 13px;
   }
 `;

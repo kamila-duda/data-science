@@ -17,9 +17,12 @@ const Home = () => {
   return (
     <Container id="home">
       <Intro>
-        <Title>Data Science &amp; Artificial Inteligence</Title>
+        <Title>
+          Sztuczna inteligencja
+          <br /> &amp; Data Science
+        </Title>
         <ButtonsWrapper>
-          <Button color={true}>
+          <Button color="true">
             <Link to={"information"} offset={-100} spy={true} smooth={true}>
               Informacje
             </Link>

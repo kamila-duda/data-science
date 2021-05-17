@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyledNav,
   StyledNavList,
@@ -14,8 +14,23 @@ import { faHome, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [lenguage, setLenguage] = useState("pl");
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setIsScrolling(true);
+    } else {
+      setIsScrolling(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const sections = [
+    { navItem: "Dla kandydatów", scrollTo: "forCandidates" },
     { navItem: "Informacje", scrollTo: "information" },
     { navItem: "Zalety", scrollTo: "benefits" },
     { navItem: "Przedmioty", scrollTo: "subjects" },
@@ -24,7 +39,7 @@ const Navigation = () => {
   ];
 
   return (
-    <StyledNav>
+    <StyledNav isScrolling={isScrolling}>
       <StyledHomeWrapper>
         <FontAwesomeIcon
           icon={faHome}

@@ -14,5 +14,6 @@ body{
   background-size: 15%;
   font-family: 'Raleway', sans-serif;
   margin: 0;
+  color: ${({ theme }) => theme.color.darknestWhite};
 }
 `;

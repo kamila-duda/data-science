@@ -27,8 +27,14 @@ export const StyledList = styled.ul`
 export const StyledListItem = styled.li`
   padding: 20px 0;
   font-size: 24px;
-  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
+    font-size: 18px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.s}) {
     font-size: 16px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+    font-size: 14px;
   }
 `;
 

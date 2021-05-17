@@ -2,11 +2,7 @@ import styled, { css } from "styled-components";
 import { Link } from "react-scroll";
 
 export const StyledNav = styled.nav`
-  background: radial-gradient(
-    68.27% 242.48% at 65.38% 34.1%,
-    #374379 0%,
-    #1f1735 100%
-  );
+  background: transparent;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -19,6 +15,15 @@ export const StyledNav = styled.nav`
   right: 0;
   color: ${({ theme }) => theme.color.darknestWhite};
   z-index: 100;
+  ${({ isScrolling }) =>
+    isScrolling &&
+    css`
+      background: radial-gradient(
+        68.27% 242.48% at 65.38% 34.1%,
+        #374379 0%,
+        #1f1735 100%
+      );
+    `}
 `;
 
 export const StyledHomeWrapper = styled.div`
@@ -27,6 +32,9 @@ export const StyledHomeWrapper = styled.div`
   font-size: 36px;
   display: flex;
   align-items: center;
+  @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
+    font-size: 24px;
+  }
 `;
 
 export const Language = styled.h2`
@@ -58,7 +66,8 @@ export const StyledNavList = styled.ul`
 
 export const StyledNavItem = styled(Link)`
   position: relative;
-  padding: 15px 30px;
+  padding: 15px 0px;
+  margin: 0 30px;
   font-size: 18px;
   letter-spacing: 2px;
   text-align: center;
@@ -68,9 +77,12 @@ export const StyledNavItem = styled(Link)`
   color: ${({ theme }) => theme.color.darknestWhite};
   @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
     font-size: 12px;
+    padding: 10px 0;
+    margin: 0 10px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
     padding: 10px;
+    margin: 0;
     font-size: 16px;
   }
   &:hover {
