@@ -1,34 +1,45 @@
 import React, { useRef, useEffect, useState } from "react";
 import { SectionTitle } from "../CommonStyle";
-import Accordion from "./Accordion/Accordion";
+import Tile from "./Tile/Tile";
+import Arrow from "./../../assets/svg/arrow.svg";
+import After from "./../../assets/svg/afterStudy.svg";
+import Before from "./../../assets/svg/beforeStudy.svg";
 import Canvas from "./Canvas/Canvas";
-import Canvas2 from "./Canvas/Canvas2";
 import {
-  AccordionsWrapper,
+  TilesWrapper,
   Container,
-  AccordionTitle,
-  AccordionContainer,
-  AccordionWrapper,
+  TileTitle,
+  TileContainer,
+  TileWrapper,
+  Image,
+  ImageWrapper,
 } from "./Subjects.styled";
-import { przedmioty as accordionData } from "./przedmioty.js";
+import { przedmioty as TileData } from "./przedmioty.js";
 
 const Subjects = () => {
-  const firstAccordionRef = useRef(null);
-  const firstAccordion = firstAccordionRef.current;
+  const firstTileRef = useRef(null);
+  const firstTile = firstTileRef.current;
 
-  const secondAccordionRef = useRef(null);
-  const secondAccordion = secondAccordionRef.current;
+  const secondTileRef = useRef(null);
+  const secondTile = secondTileRef.current;
 
-  const thirdAccordionRef = useRef(null);
-  const thirdAccordion = thirdAccordionRef.current;
+  const thirdTileRef = useRef(null);
+  const thirdTile = thirdTileRef.current;
 
-  const canvasFirstRef = useRef(null);
-  const canvasSecondtRef = useRef(null);
+  const fourthTileRef = useRef(null);
+  const fourthTile = fourthTileRef.current;
+
+  const fiveTileRef = useRef(null);
+  const fiveTile = fiveTileRef.current;
+
+  const parentRef = useRef(null);
+  const parent = parentRef.current;
 
   const checkHeight = useRef(null);
 
   const [isLoad, setIsLoad] = useState(false);
   const [height, setHeight] = useState(300);
+  const [parentHeight, setParentHeight] = useState(300);
 
   const draw = (ctx, ref1, ref2) => {
     ctx.strokeStyle = "#FFFFFF";
@@ -36,93 +47,101 @@ const Subjects = () => {
     for (let i = 0; i < ref1.childNodes.length; i++) {
       for (let j = 0; j < ref2.childNodes.length; j++) {
         ctx.beginPath();
-
-        console.log(
-          `wysokość pierwszego z subjects: ${
-            ref1.childNodes[0].getBoundingClientRect().height
-          }`
-        );
         ctx.moveTo(
           0,
           ref1.childNodes[i].getBoundingClientRect().height / 2 +
-            70 +
+            80 +
+            (parentHeight - ref1.getBoundingClientRect().height) / 2 +
             (ref1.childNodes[i].getBoundingClientRect().height + 20) * i
         );
         ctx.lineTo(
           70,
           ref2.childNodes[j].getBoundingClientRect().height / 2 +
-            70 +
+            80 +
+            (parentHeight - ref2.getBoundingClientRect().height) / 2 +
             (ref2.childNodes[j].getBoundingClientRect().height + 20) * j
         );
         ctx.stroke();
       }
     }
   };
-  const [isResize, setIsResize] = useState(false);
-  const handleClick = () => {
-    setIsResize(!isResize);
-    setHeight(checkHeight.current.getBoundingClientRect().height);
-  };
 
-  useEffect(() => {
-    if (firstAccordion && secondAccordion && thirdAccordion) {
-      firstAccordion.addEventListener("click", handleClick);
-      secondAccordion.addEventListener("click", handleClick);
-      thirdAccordion.addEventListener("click", handleClick);
-
-      return () => {
-        firstAccordion.removeEventListener("click", handleClick);
-        secondAccordion.removeEventListener("click", handleClick);
-        thirdAccordion.removeEventListener("click", handleClick);
-      };
-    }
-  }, [isResize, firstAccordion, secondAccordion, thirdAccordion, handleClick]);
-
+  console.log(parentHeight);
   useEffect(() => {
     setIsLoad(true);
     setHeight(checkHeight.current.getBoundingClientRect().height);
+    if (parent) {
+      setParentHeight(parent.getBoundingClientRect().height);
+    }
+
+    console.log(parentHeight);
   }, []);
 
   return (
     <Container id="subjects">
       <SectionTitle>Przedmioty</SectionTitle>
-      <AccordionsWrapper>
-        <AccordionContainer>
-          <AccordionTitle>sem.I</AccordionTitle>
-          <AccordionWrapper ref={firstAccordionRef}>
-            <Accordion data={accordionData} />
-          </AccordionWrapper>
-        </AccordionContainer>
-        {isLoad && canvasFirstRef && (
+
+      <TilesWrapper ref={parentRef}>
+        <ImageWrapper ref={fiveTileRef}>
+          <Image src={Before} />
+        </ImageWrapper>
+        {isLoad && (
           <Canvas
             draw={draw}
-            ref1={firstAccordion}
-            ref2={secondAccordion}
-            isResize={isResize}
+            ref1={fiveTile}
+            ref2={firstTile}
             height={height}
           />
         )}
-        <AccordionContainer ref={checkHeight}>
-          <AccordionTitle>sem.II</AccordionTitle>
-          <AccordionWrapper ref={secondAccordionRef}>
-            <Accordion data={accordionData} />
-          </AccordionWrapper>
-        </AccordionContainer>
-        {isLoad && canvasSecondtRef && (
+        <TileContainer>
+          <TileTitle>sem.I</TileTitle>
+          <TileWrapper ref={firstTileRef}>
+            <Tile data={TileData[0]} />
+          </TileWrapper>
+        </TileContainer>
+        {isLoad && (
           <Canvas
             draw={draw}
-            ref1={secondAccordion}
-            ref2={thirdAccordion}
-            isResize={isResize}
+            ref1={firstTile}
+            ref2={secondTile}
+            height={height}
           />
         )}
-        <AccordionContainer>
-          <AccordionTitle>sem.III</AccordionTitle>
-          <AccordionWrapper ref={thirdAccordionRef}>
-            <Accordion data={accordionData} />
-          </AccordionWrapper>
-        </AccordionContainer>
-      </AccordionsWrapper>
+        <TileContainer ref={checkHeight}>
+          <TileTitle>sem.II</TileTitle>
+          <TileWrapper ref={secondTileRef}>
+            <Tile data={TileData[1]} />
+          </TileWrapper>
+        </TileContainer>
+        {isLoad && (
+          <Canvas
+            draw={draw}
+            ref1={secondTile}
+            ref2={thirdTile}
+            height={height}
+          />
+        )}
+        <TileContainer>
+          <TileTitle>sem.III</TileTitle>
+          <TileWrapper ref={thirdTileRef}>
+            <Tile data={TileData[2]} />
+          </TileWrapper>
+        </TileContainer>
+        {isLoad && (
+          <Canvas
+            draw={draw}
+            ref1={thirdTile}
+            ref2={fourthTile}
+            height={height}
+          />
+        )}
+        <div ref={fourthTileRef}>
+          <ImageWrapper>
+            <Image src={Arrow} />
+            <Image src={After} />
+          </ImageWrapper>
+        </div>
+      </TilesWrapper>
     </Container>
   );
 };
