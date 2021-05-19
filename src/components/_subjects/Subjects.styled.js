@@ -19,6 +19,30 @@ export const AccordionsWrapper = styled.div`
   width: 100%;
 `;
 
+export const AccordionWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  :before {
+    content: "";
+    position: absolute;
+    border: 2px dashed ${({ theme }) => theme.color.darknestWhite};
+    width: 116%;
+    height: 108%;
+    left: -8%;
+    top: -4%;
+    z-index: -1;
+  }
+`;
+
 export const AccordionTitle = styled.h3`
-  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+`;
+
+export const AccordionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 30%;
 `;

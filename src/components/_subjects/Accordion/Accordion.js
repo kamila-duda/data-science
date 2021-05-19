@@ -1,33 +1,25 @@
 import React, { useState } from "react";
 import {
-  AccordionContainer,
   AccordionItemWrapper,
   AccordionItemTitle,
   AccordionContent,
-  AccordionTitle,
-  AccordionWrapper,
 } from "./Accordion.styled";
 
-const Accordion = ({ data, accordionTitle }) => {
+const Accordion = ({ data }) => {
   const [isActive, setIsActive] = useState("");
 
   return (
-    <AccordionContainer>
-      <AccordionTitle>{accordionTitle}</AccordionTitle>
-      <AccordionWrapper>
-        {data.map(({ title, content, index }) => (
-          <AccordionItemWrapper
-            key={index}
-            onClick={() => setIsActive(title === isActive ? "" : title)}
-          >
-            <AccordionItemTitle>{title}</AccordionItemTitle>
-            {isActive === title && (
-              <AccordionContent>{content}</AccordionContent>
-            )}
-          </AccordionItemWrapper>
-        ))}
-      </AccordionWrapper>
-    </AccordionContainer>
+    <>
+      {data.map(({ title, content, index }) => (
+        <AccordionItemWrapper
+          key={index + title}
+          onClick={() => setIsActive(title === isActive ? "" : title)}
+        >
+          <AccordionItemTitle>{title}</AccordionItemTitle>
+          {isActive === title && <AccordionContent>{content}</AccordionContent>}
+        </AccordionItemWrapper>
+      ))}
+    </>
   );
 };
 

@@ -1,48 +1,127 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { SectionTitle } from "../CommonStyle";
 import Accordion from "./Accordion/Accordion";
 import Canvas from "./Canvas/Canvas";
-import { AccordionsWrapper, Container } from "./Subjects.styled";
+import Canvas2 from "./Canvas/Canvas2";
+import {
+  AccordionsWrapper,
+  Container,
+  AccordionTitle,
+  AccordionContainer,
+  AccordionWrapper,
+} from "./Subjects.styled";
+import { przedmioty as accordionData } from "./przedmioty.js";
 
 const Subjects = () => {
-  const draw = (ctx) => {
-    ctx.fillStyle = "#000000";
-    ctx.beginPath();
-    ctx.arc(50, 100, 20, 0, 2 * Math.PI);
-    ctx.fill();
+  const firstAccordionRef = useRef(null);
+  const firstAccordion = firstAccordionRef.current;
+
+  const secondAccordionRef = useRef(null);
+  const secondAccordion = secondAccordionRef.current;
+
+  const thirdAccordionRef = useRef(null);
+  const thirdAccordion = thirdAccordionRef.current;
+
+  const canvasFirstRef = useRef(null);
+  const canvasSecondtRef = useRef(null);
+
+  const checkHeight = useRef(null);
+
+  const [isLoad, setIsLoad] = useState(false);
+  const [height, setHeight] = useState(300);
+
+  const draw = (ctx, ref1, ref2) => {
+    ctx.strokeStyle = "#FFFFFF";
+
+    for (let i = 0; i < ref1.childNodes.length; i++) {
+      for (let j = 0; j < ref2.childNodes.length; j++) {
+        ctx.beginPath();
+
+        console.log(
+          `wysokość pierwszego z subjects: ${
+            ref1.childNodes[0].getBoundingClientRect().height
+          }`
+        );
+        ctx.moveTo(
+          0,
+          ref1.childNodes[i].getBoundingClientRect().height / 2 +
+            70 +
+            (ref1.childNodes[i].getBoundingClientRect().height + 20) * i
+        );
+        ctx.lineTo(
+          70,
+          ref2.childNodes[j].getBoundingClientRect().height / 2 +
+            70 +
+            (ref2.childNodes[j].getBoundingClientRect().height + 20) * j
+        );
+        ctx.stroke();
+      }
+    }
   };
-  const accordionData = [
-    {
-      title: "Section 1",
-      content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
-      laborum cupiditate possimus labore, hic temporibus velit dicta earum
-      suscipit commodi eum enim atque at? Et perspiciatis dolore iure
-      voluptatem.`,
-    },
-    {
-      title: "Section 2",
-      content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-      reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-      quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-      pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-      quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-      Repudiandae, mollitia id reprehenderit a ab odit!`,
-    },
-    {
-      title: "Section 3",
-      content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-      dolor ut sequi minus iste? Quas?`,
-    },
-  ];
+  const [isResize, setIsResize] = useState(false);
+  const handleClick = () => {
+    setIsResize(!isResize);
+    setHeight(checkHeight.current.getBoundingClientRect().height);
+  };
+
+  useEffect(() => {
+    if (firstAccordion && secondAccordion && thirdAccordion) {
+      firstAccordion.addEventListener("click", handleClick);
+      secondAccordion.addEventListener("click", handleClick);
+      thirdAccordion.addEventListener("click", handleClick);
+
+      return () => {
+        firstAccordion.removeEventListener("click", handleClick);
+        secondAccordion.removeEventListener("click", handleClick);
+        thirdAccordion.removeEventListener("click", handleClick);
+      };
+    }
+  }, [isResize, firstAccordion, secondAccordion, thirdAccordion, handleClick]);
+
+  useEffect(() => {
+    setIsLoad(true);
+    setHeight(checkHeight.current.getBoundingClientRect().height);
+  }, []);
+
   return (
     <Container id="subjects">
       <SectionTitle>Przedmioty</SectionTitle>
       <AccordionsWrapper>
-        <Accordion data={accordionData} accordionTitle="sem.I" />
-        <Canvas draw={draw} />
-        <Accordion data={accordionData} accordionTitle="sem.II" />
-        <Accordion data={accordionData} accordionTitle="sem.III" />
+        <AccordionContainer>
+          <AccordionTitle>sem.I</AccordionTitle>
+          <AccordionWrapper ref={firstAccordionRef}>
+            <Accordion data={accordionData} />
+          </AccordionWrapper>
+        </AccordionContainer>
+        {isLoad && canvasFirstRef && (
+          <Canvas
+            draw={draw}
+            ref1={firstAccordion}
+            ref2={secondAccordion}
+            isResize={isResize}
+            height={height}
+          />
+        )}
+        <AccordionContainer ref={checkHeight}>
+          <AccordionTitle>sem.II</AccordionTitle>
+          <AccordionWrapper ref={secondAccordionRef}>
+            <Accordion data={accordionData} />
+          </AccordionWrapper>
+        </AccordionContainer>
+        {isLoad && canvasSecondtRef && (
+          <Canvas
+            draw={draw}
+            ref1={secondAccordion}
+            ref2={thirdAccordion}
+            isResize={isResize}
+          />
+        )}
+        <AccordionContainer>
+          <AccordionTitle>sem.III</AccordionTitle>
+          <AccordionWrapper ref={thirdAccordionRef}>
+            <Accordion data={accordionData} />
+          </AccordionWrapper>
+        </AccordionContainer>
       </AccordionsWrapper>
     </Container>
   );

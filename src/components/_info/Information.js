@@ -13,33 +13,12 @@ const Information = () => {
     <Container id="information">
       <SectionTitle>Informacje o kierunku</SectionTitle>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis risus
-        massa vulputate donec a. Lorem eget risus imperdiet a hendrerit. Quis
-        duis consequat, gravida facilisis fermentum venenatis ac. Id sit
-        consectetur malesuada volutpat. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Mattis risus massa vulputate donec a. Lorem eget risus
-        imperdiet a hendrerit. Quis duis consequat, gravida facilisis fermentum
-        venenatis ac. Id sit consectetur malesuada volutpat.
+        Zaproponowany program jest odpowiedzią na rosnącą w przemyśle potrzebę coraz większej liczby ekspertów znających techniki przetwarzania danych. 
       </Paragraph>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis risus
-        massa vulputate donec a. Lorem eget risus imperdiet a hendrerit. Quis
-        duis consequat, gravida facilisis fermentum venenatis ac. Id sit
-        consectetur malesuada volutpat. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Mattis risus massa vulputate donec a. Lorem eget risus
-        imperdiet a hendrerit. Quis duis consequat, gravida facilisis fermentum
-        venenatis ac. Id sit consectetur malesuada volutpat. Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Mattis risus massa vulputate
-        donec a. Lorem eget risus imperdiet a hendrerit. Quis duis consequat,
-        gravida facilisis fermentum venenatis ac. Id sit consectetur malesuada
-        volutpat.
+        Program studiów uwzględnia zarówno zagadnienia analizy danych (analizę statystyczną, uczenie maszynowe, inteligencję obliczeniową, czy metody uczenia głębokiego) jak i różne metody dostępu do danych. Absolwent będzie znał zarówno teoretyczne podstawy różnych współczesnych metod analizy danych, jak i będzie potrafił wykorzystać te metody na różnych polach, takich jak analiza danych złożonych (tekst, dźwięk, obraz), analiza danych medycznych, zastosowania w ekonomii, czy w robotyce. Uczestnicy poznają najnowsze narzędzia przetwarzania danych, jak i rozwiązania aktualnie proponowane w światowej literaturze. Studenci poznają również metody prowadzenia badań naukowych. Będzie to solidną podstawą do kontynuowania nauki w ramach Szkoły Doktorskiej prowadzonej na Politechnice Częstochowskiej, lub w innych ośrodkach naukowych w kraju i zagranicą.
       </Paragraph>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis risus
-        massa vulputate donec a. Mattis risus massa vulputate donec a. Lorem
-        eget risus imperdiet a hendrerit. Quis duis consequat, gravida facilisis
-        fermentum venenatis ac. Id sit consectetur malesuada volutpat.
-      </Paragraph>
+      <Paragraph> Absolwent może znaleźć pracę w instytucjach finansowych, centrach badawczych, jak i firmach przetwarzających wielkie zbiory danych (ang. Big Data).</Paragraph>
       <StyledList>
         <StyledListItem>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
