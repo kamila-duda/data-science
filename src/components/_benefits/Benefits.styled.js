@@ -19,7 +19,7 @@ export const TileGrid = styled.div`
   grid-gap: 38px;
   grid-template-columns: repeat(3, 1fr);
   margin: 60px 0;
-  @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.s}) {
     grid-template-columns: repeat(2, 1fr);
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {

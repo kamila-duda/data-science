@@ -1,6 +1,17 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-scroll";
 
+export const StyledHomeWrapper = styled.div`
+  margin: 10px;
+  padding: 10px;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
+    font-size: 24px;
+  }
+`;
+
 export const StyledNav = styled.nav`
   background: transparent;
   list-style-type: none;
@@ -23,18 +34,11 @@ export const StyledNav = styled.nav`
         #374379 0%,
         #1f1735 100%
       );
+      ${StyledHomeWrapper} {
+        margin: 2px 10px;
+        padding: 2px 10px;
+      }
     `}
-`;
-
-export const StyledHomeWrapper = styled.div`
-  margin: 10px;
-  padding: 10px;
-  font-size: 36px;
-  display: flex;
-  align-items: center;
-  @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
-    font-size: 24px;
-  }
 `;
 
 export const Language = styled.h2`

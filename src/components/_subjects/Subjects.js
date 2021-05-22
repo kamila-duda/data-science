@@ -13,6 +13,7 @@ import {
   TileWrapper,
   Image,
   ImageWrapper,
+  TitleContainer,
 } from "./Subjects.styled";
 import { przedmioty as TileData } from "./przedmioty.js";
 
@@ -35,11 +36,25 @@ const Subjects = () => {
   const parentRef = useRef(null);
   const parent = parentRef.current;
 
-  const checkHeight = useRef(null);
-
   const [isLoad, setIsLoad] = useState(false);
-  const [height, setHeight] = useState(300);
-  const [parentHeight, setParentHeight] = useState(300);
+  const [parentHeight, setParentHeight] = useState(700);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener("load", () => setWindowWidth(window.innerWidth));
+    return () =>
+      window.removeEventListener("load", () =>
+        setWindowWidth(window.innerWidth)
+      );
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setWindowWidth(window.innerWidth));
+    return () =>
+      window.removeEventListener("resize", () =>
+        setWindowWidth(window.innerWidth)
+      );
+  }, [window.innerWidth]);
 
   const draw = (ctx, ref1, ref2) => {
     ctx.strokeStyle = "#FFFFFF";
@@ -50,14 +65,14 @@ const Subjects = () => {
         ctx.moveTo(
           0,
           ref1.childNodes[i].getBoundingClientRect().height / 2 +
-            80 +
+            40 +
             (parentHeight - ref1.getBoundingClientRect().height) / 2 +
             (ref1.childNodes[i].getBoundingClientRect().height + 20) * i
         );
         ctx.lineTo(
-          70,
+          100,
           ref2.childNodes[j].getBoundingClientRect().height / 2 +
-            80 +
+            40 +
             (parentHeight - ref2.getBoundingClientRect().height) / 2 +
             (ref2.childNodes[j].getBoundingClientRect().height + 20) * j
         );
@@ -66,31 +81,31 @@ const Subjects = () => {
     }
   };
 
-  console.log(parentHeight);
   useEffect(() => {
-    setIsLoad(true);
-    setHeight(checkHeight.current.getBoundingClientRect().height);
     if (parent) {
       setParentHeight(parent.getBoundingClientRect().height);
     }
+  }, [isLoad, parent]);
 
-    console.log(parentHeight);
+  useEffect(() => {
+    setIsLoad(true);
   }, []);
 
   return (
     <Container id="subjects">
-      <SectionTitle>Przedmioty</SectionTitle>
-
+      <TitleContainer>
+        <SectionTitle>Przedmioty</SectionTitle>
+      </TitleContainer>
       <TilesWrapper ref={parentRef}>
         <ImageWrapper ref={fiveTileRef}>
           <Image src={Before} />
         </ImageWrapper>
-        {isLoad && (
+        {isLoad && windowWidth > 1130 && (
           <Canvas
             draw={draw}
             ref1={fiveTile}
             ref2={firstTile}
-            height={height}
+            height={parentHeight}
           />
         )}
         <TileContainer>
@@ -99,26 +114,26 @@ const Subjects = () => {
             <Tile data={TileData[0]} />
           </TileWrapper>
         </TileContainer>
-        {isLoad && (
+        {isLoad && windowWidth > 1130 && (
           <Canvas
             draw={draw}
             ref1={firstTile}
             ref2={secondTile}
-            height={height}
+            height={parentHeight}
           />
         )}
-        <TileContainer ref={checkHeight}>
+        <TileContainer>
           <TileTitle>sem.II</TileTitle>
           <TileWrapper ref={secondTileRef}>
             <Tile data={TileData[1]} />
           </TileWrapper>
         </TileContainer>
-        {isLoad && (
+        {isLoad && windowWidth > 1130 && (
           <Canvas
             draw={draw}
             ref1={secondTile}
             ref2={thirdTile}
-            height={height}
+            height={parentHeight}
           />
         )}
         <TileContainer>
@@ -127,12 +142,12 @@ const Subjects = () => {
             <Tile data={TileData[2]} />
           </TileWrapper>
         </TileContainer>
-        {isLoad && (
+        {isLoad && windowWidth > 1130 && (
           <Canvas
             draw={draw}
             ref1={thirdTile}
             ref2={fourthTile}
-            height={height}
+            height={parentHeight}
           />
         )}
         <div ref={fourthTileRef}>

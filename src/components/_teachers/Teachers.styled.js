@@ -22,11 +22,8 @@ export const PicturesGrid = styled.div`
   grid-gap: 20px;
   grid-template-columns: repeat(4, 1fr);
   margin: 60px 0;
-  @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
-    grid-template-columns: repeat(3, 1fr);
-  }
   @media (max-width: ${({ theme }) => theme.breakpoint.s}) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
     grid-template-columns: repeat(1, 1fr);
@@ -43,6 +40,7 @@ export const PictureWrapper = styled.div`
   align-items: flex-start;
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
     padding: 30px;
+    align-items: center;
   }
 `;
 

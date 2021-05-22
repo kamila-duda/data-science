@@ -3,8 +3,8 @@ import styled, { css } from "styled-components";
 
 export const StyledUpButton = styled.div`
   position: fixed;
-  right: 40px;
-  bottom: 40px;
+  right: 50px;
+  bottom: 50px;
   z-index: 100;
   cursor: pointer;
   color: ${({ theme }) => theme.color.secondColor};
@@ -30,9 +30,9 @@ export const StyledText = styled.h3`
   text-align: center;
 `;
 export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  font-size: 80px;
-  font-weight: 600;
+  font-size: 50px;
+  font-weight: 500;
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
-    font-size: 50px;
+    font-size: 30px;
   }
 `;
