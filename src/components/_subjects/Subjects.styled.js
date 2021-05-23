@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.section`
   position: relative;
@@ -35,6 +35,12 @@ export const TilesWrapper = styled.div`
   margin-top: 50px;
 `;
 
+export const TilesWrapperAnother = styled(TilesWrapper)`
+  position: relative;
+  padding: 10px;
+  border: 3px dashed ${({ theme }) => theme.color.orange};
+`;
+
 export const TileWrapper = styled.div`
   position: relative;
   display: flex;
@@ -50,7 +56,7 @@ export const TileWrapper = styled.div`
     top: -1%;
     z-index: -1;
     @media (max-width: ${({ theme }) => theme.breakpoint.canvas}) {
-      border: unset;
+      display: none;
     }
   }
 `;
@@ -60,11 +66,19 @@ export const TileTitle = styled.h3`
   text-align: center;
 `;
 
+export const AnotherTitle = styled(TileTitle)`
+  position: absolute;
+  padding: 5px;
+  top: -35px;
+  background: #1f1735;
+`;
+
 export const TileContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 170px;
   flex-grow: 1;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.canvas}) {
     width: 250px;
   }
@@ -72,6 +86,15 @@ export const TileContainer = styled.div`
 
 export const Image = styled.img`
   margin: 80px 10px 0 0;
+`;
+
+export const ArrowOrange = styled.img`
+  position: absolute;
+  top: -62%;
+  right: 25%;
+  @media (max-width: ${({ theme }) => theme.breakpoint.another}) {
+    display: none;
+  }
 `;
 
 export const ImageWrapper = styled.div`

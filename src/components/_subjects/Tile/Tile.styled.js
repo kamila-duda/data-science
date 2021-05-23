@@ -12,7 +12,7 @@ export const Arrow = styled.span`
   right: 10px;
 `;
 
-export const TileContent = styled.p`
+export const TileContent = styled.div`
   display: none;
   position: absolute;
   top: 0;
@@ -22,10 +22,18 @@ export const TileContent = styled.p`
   margin: 0;
   font-size: 12px;
   padding: 70px 10px 20px;
-  border-radius: 25px;
+  border-radius: 20px;
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
     font-size: 12px;
   }
+`;
+
+export const Content = styled.p`
+  ${({ bold }) =>
+    bold &&
+    css`
+      font-weight: bold;
+    `}
 `;
 
 export const TileItemWrapper = styled.div`
@@ -48,6 +56,36 @@ export const TileItemWrapper = styled.div`
     }
     background: ${({ theme }) => theme.color.lighterPrimaryColor};
   }
+  ${({ isEnglish }) =>
+    isEnglish &&
+    css`
+      background: radial-gradient(
+        68.27% 242.48% at 65.38% 34.1%,
+        #ff253a 0%,
+        #0044ff 100%
+      );
+      :hover {
+        ${TileContent} {
+          background: #ff253a;
+        }
+      }
+    `}
+  ${({ isYellow }) =>
+    isYellow &&
+    css`
+      background: #e87c0c;
+      :hover {
+        ${TileContent} {
+          background: #e87c0c;
+        }
+      }
+    `}
+  ${({ another }) =>
+    another &&
+    css`
+      width: 180px;
+      margin: 10px;
+    `}
   @media (max-width: ${({ theme }) => theme.breakpoint.canvas}) {
     margin: 10px;
   }

@@ -99,7 +99,7 @@ export const StyledNavItem = styled(Link)`
 
 export const StyledIcon = styled.div`
   position: absolute;
-  top: 20px;
+  top: 10px;
   right: 20px;
   width: 45px;
   height: 45px;

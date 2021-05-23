@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.section`
   position: relative;
@@ -6,7 +6,7 @@ export const Container = styled.section`
   min-height: 100vh;
   padding: 160px 100px 20px;
   background: ${({ theme }) => theme.color.darknestWhite};
-  @media (max-width: ${({ theme }) => theme.breakpoint.s}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.m}) {
     padding: 60px 40px 40px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
@@ -41,8 +41,20 @@ export const Tile = styled.div`
 export const Decor = styled.img`
   position: absolute;
   top: -15px;
-  right: 45px;
+  left: 45px;
   width: 12%;
+`;
+
+export const Image = styled.img`
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 40%;
+  ${({ top }) =>
+    top &&
+    css`
+      top: 22%;
+    `}
 `;
 
 export const Line = styled.img`

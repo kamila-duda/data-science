@@ -20,26 +20,17 @@ export const LinksWrapper = styled.div`
 
 export const StyledLink = styled.a`
   display: block;
-  padding: 10px 0;
-  font-size: 14px;
+  padding: 5px 0;
+  font-size: 13px;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
   color: ${({ theme }) => theme.color.darknestWhite};
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
-    font-size: 12px;
+    font-size: 11px;
   }
   ${({ small }) =>
     small &&
-    css`
-      font-size: 14px;
-      text-transform: capitalize;
-      @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
-        font-size: 12px;
-      }
-    `}
-  ${({ smaller }) =>
-    smaller &&
     css`
       font-size: 12px;
       text-transform: capitalize;
@@ -47,6 +38,9 @@ export const StyledLink = styled.a`
         font-size: 10px;
       }
     `}
+  :hover {
+    color: ${({ theme }) => theme.color.secondColor};
+  }
 `;
 
 export const Copy = styled.p`

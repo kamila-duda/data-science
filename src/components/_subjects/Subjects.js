@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
-import { SectionTitle } from "../CommonStyle";
+import { SectionTitle, Paragraph } from "../CommonStyle";
 import Tile from "./Tile/Tile";
 import Arrow from "./../../assets/svg/arrow.svg";
+import Arrow2 from "./../../assets/svg/arrow2.svg";
 import After from "./../../assets/svg/afterStudy.svg";
 import Before from "./../../assets/svg/beforeStudy.svg";
 import Canvas from "./Canvas/Canvas";
@@ -14,6 +15,9 @@ import {
   Image,
   ImageWrapper,
   TitleContainer,
+  TilesWrapperAnother,
+  AnotherTitle,
+  ArrowOrange,
 } from "./Subjects.styled";
 import { przedmioty as TileData } from "./przedmioty.js";
 
@@ -95,7 +99,36 @@ const Subjects = () => {
     <Container id="subjects">
       <TitleContainer>
         <SectionTitle>Przedmioty</SectionTitle>
+        <Paragraph>
+          Studia trwają 3 semestry. Zostały zaplanowane w taki sposób, aby
+          treści na kolejnych etapach studiów uzupełniały się i odpowiadały
+          zainteresowaniom Studentów.
+        </Paragraph>
+        <Paragraph>
+          Na pierwszym semestrze uczestnicy koncetrują się na poznaniu
+          podstawowych algorytmów oraz narzędzi współcześnie wykorzystywanych w
+          analizie danych. Drugi semestr poszerza tę wiedzę o coraz bardziej
+          zaawansowane techniki oraz pokazuje szeroki zakres możliwości
+          zastosowania zdobytej już wiedzy. Trzeci semestr skupia sia się na
+          przygotowaniu rozprawy dyplomowej oraz zgłębianiu zagadnień wskaznych
+          przez Studentów.
+        </Paragraph>
+        <Paragraph>
+          W ramach 3 semestru Studenci wybierają cztery przedmioty (patrz
+          pomarańczowe węzły) z bloku przdmiotów obieralnych (patrz diagram
+          poniżej - przedmioty wymienione w pomarańczowej obwódce).
+        </Paragraph>
+        <Paragraph>
+          Więkoszość zajęć na specjaloności SZTUCZNA INTELIGENCJA prowadzone
+          jest w języku polskim. Niektóre jednak prowadzone sa w języku
+          angielskim (patrz niebiesko-czerowne węzły). Ma to na celu
+          przyzwyczaić uczestników do posługiwania się specjalistycznymi
+          terminami używanymi w międzynarodowym środowisku rozwijającym coraz to
+          nowsze techniki i narzędzia do uczenia modeli. Wszystkie zajęcia
+          prowadzone są w przyjaznej dla studentów atmosferze.
+        </Paragraph>
       </TitleContainer>
+
       <TilesWrapper ref={parentRef}>
         <ImageWrapper ref={fiveTileRef}>
           <Image src={Before} />
@@ -157,6 +190,11 @@ const Subjects = () => {
           </ImageWrapper>
         </div>
       </TilesWrapper>
+      <TilesWrapperAnother>
+        <ArrowOrange src={Arrow2} />
+        <AnotherTitle>{TileData[3].semestr}</AnotherTitle>
+        <Tile data={TileData[3]} another={true} />
+      </TilesWrapperAnother>
     </Container>
   );
 };

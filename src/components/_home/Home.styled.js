@@ -52,6 +52,17 @@ export const StyledLink = styled.a`
     `}
 `;
 
+export const StyledButtonLink = styled.a`
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  color: ${({ theme }) => theme.color.darknestWhite};
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+    font-size: 12px;
+  }
+`;
+
 export const Intro = styled.div`
   z-index: 1;
   width: 60%;
@@ -79,17 +90,20 @@ export const ButtonsWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Button = styled.button`
-  width: 200px;
+  width: 50%;
   border-radius: 25px;
   border: 1px solid ${({ theme }) => theme.color.darknestWhite};
   outline: none;
-  padding: 20px;
+  padding: 10px;
   margin: 10px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   background: ${({ theme }) => theme.color.primaryColor};
   color: ${({ theme }) => theme.color.darknestWhite};
   box-shadow: 2px 2px 10px 1px #1a64ac;
@@ -107,9 +121,17 @@ export const Button = styled.button`
     border: 1px solid ${({ theme }) => theme.color.darknestWhite};
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
-    width: 120px;
-    padding: 20px;
+    width: 100%;
+    padding: 15px;
     margin: 5px;
-    font-size: 14px;
+    font-size: 12px;
+  }
+`;
+
+export const SmallButtonContent = styled.span`
+  font-size: 14px;
+  display: block;
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+    font-size: 10px;
   }
 `;

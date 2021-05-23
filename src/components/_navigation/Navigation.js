@@ -30,11 +30,11 @@ const Navigation = () => {
   }, []);
 
   const sections = [
-    { navItem: "Dla kandydatów", scrollTo: "forCandidates" },
     { navItem: "Informacje", scrollTo: "information" },
-    { navItem: "Zalety", scrollTo: "benefits" },
+    { navItem: "Technologie", scrollTo: "benefits" },
     { navItem: "Przedmioty", scrollTo: "subjects" },
     { navItem: "Prowadzący", scrollTo: "teachers" },
+    { navItem: "Dla kandydatów", scrollTo: "forCandidates" },
     { navItem: "Kontakt", scrollTo: "contact" },
   ];
 

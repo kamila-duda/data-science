@@ -10,6 +10,7 @@ import Navigation from "./components/_navigation/Navigation";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import ForCandidates from "./components/_forCandidates/ForCandidates";
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App() {
       <Benefits />
       <Subjects />
       <Teachers />
+      <ForCandidates />
       <Contact />
       <Footer />
     </>

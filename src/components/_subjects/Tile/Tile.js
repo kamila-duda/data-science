@@ -3,15 +3,19 @@ import {
   TileItemWrapper,
   TileItemTitle,
   TileContent,
+  Content,
   Arrow,
 } from "./Tile.styled";
 
-const Tile = ({ data }) => {
+const Tile = ({ data, another }) => {
   const [activeTile, setActiveTile] = useState("");
   return (
     <>
-      {data.przedmioty.map(({ title, content, index }) => (
+      {data.przedmioty.map(({ title, content, list, lang, color, index }) => (
         <TileItemWrapper
+          another={another}
+          isEnglish={lang === "en"}
+          isYellow={color ? true : false}
           key={index + title}
           onMouseMove={() => setActiveTile(title)}
           onMouseLeave={() => setActiveTile("")}
@@ -24,7 +28,16 @@ const Tile = ({ data }) => {
               : `${title.substring(0, 20)}...`}
             <Arrow> {activeTile === title ? "⏫" : "⏬"}</Arrow>
           </TileItemTitle>
-          <TileContent>{content}</TileContent>
+          <TileContent>
+            <Content>{content}</Content>
+            {list?.map((item, index) => {
+              return (
+                <Content key={index} bold={true}>
+                  {item}
+                </Content>
+              );
+            })}
+          </TileContent>
         </TileItemWrapper>
       ))}
     </>

@@ -8,6 +8,8 @@ import {
   ButtonsWrapper,
   LinksWrapper,
   StyledLink,
+  SmallButtonContent,
+  StyledButtonLink,
 } from "./Home.styled";
 import Wave1 from "../../../src/assets/svg/wave1.svg";
 import Wave2 from "../../../src/assets/svg/wave2.svg";
@@ -24,13 +26,19 @@ const Home = () => {
         <ButtonsWrapper>
           <Button color="true">
             <Link to={"information"} offset={-100} spy={true} smooth={true}>
-              Informacje
+              Sztuczna inteligencja{" "}
+              <SmallButtonContent>
+                - zakres prowadzony w języku polskim
+              </SmallButtonContent>
             </Link>
           </Button>
           <Button>
-            <Link to={"subjects"} offset={-100} spy={true} smooth={true}>
-              Przedmioty
-            </Link>
+            <StyledButtonLink href="#">
+              Computational intelligence and data science
+              <SmallButtonContent>
+                - zakres prowadzony w j.angielskim
+              </SmallButtonContent>
+            </StyledButtonLink>
           </Button>
         </ButtonsWrapper>
       </Intro>

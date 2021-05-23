@@ -22,9 +22,8 @@ export const przedmioty = [
       },
       {
         title: "Klasyczne metody analizy danych",
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-      dolor ut sequi minus iste? Quas?`,
+        content: `Jest to przedmiot łączący klasyczną anlizę statystyczną z metodami sztucznej inteligencji. Jego celem jest pokazanie na które aspekty terorii prawdopodobieństwa przyszły anlityk danych powinien zwrócić szczególną uwagę.`,
+        list: ["Wykład: 15h", "Laboratoria: 30h"],
         lang: "pl",
       },
       {
@@ -36,9 +35,9 @@ export const przedmioty = [
       },
       {
         title: "Eksploracja danych – data mining",
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-      dolor ut sequi minus iste? Quas?`,
+        content:
+          "W ramach tego przediotu przedstawione zostaną podstawowe metody uczenia maszynowego. Omówione zostaną rózne techniki klasyfikacji, regresji, grupowania danych, ekstrakcji cech, czy oceny modeli",
+        list: ["Wykład: 30h (EGZAMIN)", "Laboratoria: 30h"],
         lang: "pl",
       },
       {
@@ -158,34 +157,6 @@ export const przedmioty = [
     semestr: "3",
     przedmioty: [
       {
-        title: "Zastosowania sztucznej inteligencji I",
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-      dolor ut sequi minus iste? Quas?`,
-        lang: "pl",
-      },
-      {
-        title: "Zastosowania sztucznej inteligencji II",
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-      dolor ut sequi minus iste? Quas?`,
-        lang: "pl",
-      },
-      {
-        title: "Zastosowania sztucznej inteligencji III",
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-      dolor ut sequi minus iste? Quas?`,
-        lang: "pl",
-      },
-      {
-        title: "Zastosowania sztucznej inteligencji IV",
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-      dolor ut sequi minus iste? Quas?`,
-        lang: "pl",
-      },
-      {
         title: "Metodology of scientific research",
         content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
       quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
@@ -198,6 +169,120 @@ export const przedmioty = [
       quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
       dolor ut sequi minus iste? Quas?`,
         lang: "pl",
+      },
+      {
+        title: "Zastosowania sztucznej inteligencji I",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "pl",
+        color: "yellow",
+      },
+      {
+        title: "Zastosowania sztucznej inteligencji II",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "pl",
+        color: "yellow",
+      },
+      {
+        title: "Zastosowania sztucznej inteligencji III",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "pl",
+        color: "yellow",
+      },
+      {
+        title: "Zastosowania sztucznej inteligencji IV",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "pl",
+        color: "yellow",
+      },
+    ],
+  },
+  {
+    semestr: "Blok przedmiotów obieralnych:",
+    przedmioty: [
+      {
+        title: "Systemy inteligentne w diagnostyce i medycynie",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "pl",
+      },
+      {
+        title: "Artificial intelligence in medicine",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "en",
+      },
+      {
+        title: "Zastosowanie sztucznej inteligencji w urządzeniach mobilnych",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "pl",
+      },
+      {
+        title: "Application of artificial intelligence in mobile devices",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "en",
+      },
+      {
+        title: "Systemy autonomiczne",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "pl",
+      },
+      {
+        title: "Autonomous systems",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "en",
+      },
+      {
+        title: "Eksploracja danych i Big Data",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "pl",
+      },
+      {
+        title: "Sztuczna inteligencja w robotyce i sterowaniu",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "pl",
+      },
+      {
+        title: "Rozwiązywania zadań odrotnych",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "pl",
+      },
+      {
+        title: "Computer vision, pattern recognition & Image retrieval",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "en",
+      },
+      {
+        title: "Artificial intelligence in control applications",
+        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
+      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
+      dolor ut sequi minus iste? Quas?`,
+        lang: "en",
       },
     ],
   },

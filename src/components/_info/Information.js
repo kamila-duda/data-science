@@ -19,11 +19,16 @@ const Information = () => {
       <Paragraph>
         Program studiów uwzględnia zarówno zagadnienia analizy danych (analizę
         statystyczną, uczenie maszynowe, inteligencję obliczeniową, czy metody
-        uczenia głębokiego) jak i różne metody dostępu do danych. Absolwent
-        będzie znał zarówno teoretyczne podstawy różnych współczesnych metod
-        analizy danych, jak i będzie potrafił wykorzystać te metody na różnych
-        polach, takich jak analiza danych złożonych (tekst, dźwięk, obraz),
-        analiza danych medycznych, zastosowania w ekonomii, czy w robotyce.
+        uczenia głębokiego) jak i różne metody dostępu do danych.
+      </Paragraph>
+      <Paragraph>
+        Absolwent będzie znał zarówno teoretyczne podstawy różnych współczesnych
+        metod analizy danych, jak i będzie potrafił wykorzystać te metody na
+        różnych polach, takich jak analiza danych złożonych (tekst, dźwięk,
+        obraz), analiza danych medycznych, zastosowania w ekonomii, czy w
+        robotyce.
+      </Paragraph>
+      <Paragraph>
         Uczestnicy poznają najnowsze narzędzia przetwarzania danych, jak i
         rozwiązania aktualnie proponowane w światowej literaturze. Studenci
         poznają również metody prowadzenia badań naukowych. Będzie to solidną

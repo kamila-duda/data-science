@@ -4,9 +4,11 @@ import {
   PicturesGrid,
   PictureWrapper,
   Image,
+  StyledLink,
 } from "./Teachers.styled";
 import Male from "../../../src/assets/images/male.png";
 import Female from "../../../src/assets/images/female.png";
+import Piotr from "../../../src/assets/images/PD.jpg";
 import { SectionTitle, SmallerParagraph } from "../CommonStyle";
 
 const Teachers = () => {
@@ -15,52 +17,94 @@ const Teachers = () => {
       <SectionTitle>Prowadzący</SectionTitle>
       <PicturesGrid>
         <PictureWrapper data-aos="fade">
-          <Image src={Male} />
-          <SmallerParagraph>Prof. dr hab. Jan Kowalski</SmallerParagraph>
-          <SmallerParagraph>Instytut czegoś tam</SmallerParagraph>
-          <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          <StyledLink
+            href="http://www.iisi.pcz.pl/~pduda/index.php"
+            target="_blank"
+          >
+            <Image src={Piotr} />
+            <SmallerParagraph>Prof. dr hab. Jan Kowalski</SmallerParagraph>
+            <SmallerParagraph>Katedra czegoś tam</SmallerParagraph>
+            <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          </StyledLink>
         </PictureWrapper>
         <PictureWrapper data-aos="fade">
-          <Image src={Female} />
-          <SmallerParagraph>Prof. dr hab. Anna Kowalska</SmallerParagraph>
-          <SmallerParagraph>Instytut czegoś tam</SmallerParagraph>
-          <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          <StyledLink
+            href="http://www.iisi.pcz.pl/~pduda/index.php"
+            target="_blank"
+          >
+            <Image src={Female} />
+            <SmallerParagraph>Prof. dr hab. Anna Kowalska</SmallerParagraph>
+            <SmallerParagraph>Katedra czegoś tam</SmallerParagraph>
+            <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          </StyledLink>
         </PictureWrapper>
         <PictureWrapper data-aos="fade">
-          <Image src={Male} />
-          <SmallerParagraph>Prof. dr hab. Jan Kowalski</SmallerParagraph>
-          <SmallerParagraph>Instytut czegoś tam</SmallerParagraph>
-          <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          {" "}
+          <StyledLink
+            href="http://www.iisi.pcz.pl/~pduda/index.php"
+            target="_blank"
+          >
+            <Image src={Male} />
+            <SmallerParagraph>Prof. dr hab. Jan Kowalski</SmallerParagraph>
+            <SmallerParagraph>Katedra czegoś tam</SmallerParagraph>
+            <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          </StyledLink>
         </PictureWrapper>
         <PictureWrapper data-aos="fade">
-          <Image src={Female} />
-          <SmallerParagraph>Prof. dr hab. Anna Kowalska</SmallerParagraph>
-          <SmallerParagraph>Instytut czegoś tam</SmallerParagraph>
-          <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          <StyledLink
+            href="http://www.iisi.pcz.pl/~pduda/index.php"
+            target="_blank"
+          >
+            <Image src={Piotr} />
+            <SmallerParagraph>Prof. dr hab. Jan Kowalski</SmallerParagraph>
+            <SmallerParagraph>Katedra czegoś tam</SmallerParagraph>
+            <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          </StyledLink>
         </PictureWrapper>
-        <PictureWrapper>
-          <Image src={Male} />
-          <SmallerParagraph>Prof. dr hab. Jan Kowalski</SmallerParagraph>
-          <SmallerParagraph>Instytut czegoś tam</SmallerParagraph>
-          <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+        <PictureWrapper data-aos="fade">
+          <StyledLink
+            href="http://www.iisi.pcz.pl/~pduda/index.php"
+            target="_blank"
+          >
+            <Image src={Female} />
+            <SmallerParagraph>Prof. dr hab. Anna Kowalska</SmallerParagraph>
+            <SmallerParagraph>Katedra czegoś tam</SmallerParagraph>
+            <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          </StyledLink>
         </PictureWrapper>
-        <PictureWrapper>
-          <Image src={Female} />
-          <SmallerParagraph>Prof. dr hab. Anna Kowalska</SmallerParagraph>
-          <SmallerParagraph>Instytut czegoś tam</SmallerParagraph>
-          <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+        <PictureWrapper data-aos="fade">
+          {" "}
+          <StyledLink
+            href="http://www.iisi.pcz.pl/~pduda/index.php"
+            target="_blank"
+          >
+            <Image src={Male} />
+            <SmallerParagraph>Prof. dr hab. Jan Kowalski</SmallerParagraph>
+            <SmallerParagraph>Katedra czegoś tam</SmallerParagraph>
+            <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          </StyledLink>
         </PictureWrapper>
-        <PictureWrapper>
-          <Image src={Male} />
-          <SmallerParagraph>Prof. dr hab. Jan Kowalski</SmallerParagraph>
-          <SmallerParagraph>Instytut czegoś tam</SmallerParagraph>
-          <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+        <PictureWrapper data-aos="fade">
+          <StyledLink
+            href="http://www.iisi.pcz.pl/~pduda/index.php"
+            target="_blank"
+          >
+            <Image src={Piotr} />
+            <SmallerParagraph>Prof. dr hab. Jan Kowalski</SmallerParagraph>
+            <SmallerParagraph>Katedra czegoś tam</SmallerParagraph>
+            <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          </StyledLink>
         </PictureWrapper>
-        <PictureWrapper>
-          <Image src={Female} />
-          <SmallerParagraph>Prof. dr hab. Anna Kowalska</SmallerParagraph>
-          <SmallerParagraph>Instytut czegoś tam</SmallerParagraph>
-          <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+        <PictureWrapper data-aos="fade">
+          <StyledLink
+            href="http://www.iisi.pcz.pl/~pduda/index.php"
+            target="_blank"
+          >
+            <Image src={Female} />
+            <SmallerParagraph>Prof. dr hab. Anna Kowalska</SmallerParagraph>
+            <SmallerParagraph>Katedra czegoś tam</SmallerParagraph>
+            <SmallerParagraph>mail: bla@pcz.pl</SmallerParagraph>
+          </StyledLink>
         </PictureWrapper>
       </PicturesGrid>
     </Container>

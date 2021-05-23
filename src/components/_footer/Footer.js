@@ -12,11 +12,7 @@ const Footer = () => {
         <StyledLink small="true" href="https://wimii.pcz.pl/" target="_blank">
           Wydział Inżynierii Mechanicznej i Informatyki
         </StyledLink>
-        <StyledLink
-          smaller="true"
-          href="http://www.iisi.pcz.pl/"
-          target="_blank"
-        >
+        <StyledLink small="true" href="http://www.iisi.pcz.pl/" target="_blank">
           Katedra Inteligentnych Systemów Informatycznych
         </StyledLink>
       </LinksWrapper>
